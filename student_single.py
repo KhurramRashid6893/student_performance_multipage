@@ -25,14 +25,14 @@ def app():
 
 
   st.sidebar.title("Student Data Visualisation")
-  if st.sidebar.button('Display Raw data', type="primary"):
-    st.subheader("Student Data Set", divider='rainbow')
+  if st.sidebar.button('Display Raw data'):
+    st.subheader("Student Data Set")
     st.dataframe(df)
     st.write("Number of Rows: ", df.shape[0])
     st.write("Number of Columns: ", df.shape[1])
 
   x = df.describe()
-  if st.sidebar.button("Describe", type="primary"):
+  if st.sidebar.button("Describe"):
     st.write(x)
 
 
@@ -44,7 +44,7 @@ def app():
   # max_ = df["Previous Scores"].max()
   # min_max = st.sidebar.slider("Select Previous Scores:", min_, max_)
 
-  if st.sidebar.button("Scatter Plot", type="primary"):
+  if st.sidebar.button("Scatter Plot"):
     fig, ax = plt.subplots()
     ax.scatter(df["Previous Scores"], df['Performance Index'])
     ax.set_xlabel("Performance Index")
@@ -63,14 +63,14 @@ def app():
   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, shuffle = False, stratify = None)
 
   st.sidebar.title("Visualisation after prediction")
-  if st.sidebar.button("Scaled DataFrame", type="primary"):
-    st.subheader("DataSet", divider = 'rainbow')
+  if st.sidebar.button("Scaled DataFrame"):
+    st.subheader("DataSet")
     st.dataframe(X)
     st.write("Number of Rows: ", df.shape[0])
     st.write("Number of Columns: ", df.shape[1])
   #Linear Regression
-  #if st.button("Single Linear Regression", type="primary"):
-  if st.sidebar.button("Single Linear Regression", type="primary"):
+  #if st.button("Single Linear Regression"):
+  if st.sidebar.button("Single Linear Regression"):
       st.title("Linear Regression")
 
       lr = LinearRegression()
