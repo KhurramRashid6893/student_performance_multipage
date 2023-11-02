@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 import streamlit as st
 
 def app():
-	df = pd.read_csv('student.csv')
+	df = pd.read_csv('Student.csv')
 	st.markdown("<h1 style='text-align: center; color: blue;'>Student performance using multiple linear regression</h1>", unsafe_allow_html=True)
 
 
