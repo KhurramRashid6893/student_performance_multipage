@@ -25,19 +25,19 @@ def app():
 
 
   st.sidebar.title("Student Data Visualisation")
-  if st.sidebar.button('Display Raw data ', type="primary"):
-    st.subheader("Student Data Set", divider='rainbow')
+  if st.sidebar.button('Display Raw data '):
+    st.subheader("Student Data Set")
     st.dataframe(df)
     st.write("Number of Rows: ", df.shape[0])
     st.write("Number of Columns: ", df.shape[1])
 
   x = df.describe()
-  if st.sidebar.button("Describe", type="primary"):
+  if st.sidebar.button("Describe"):
     st.write(x)
 
 
   selected_column = st.sidebar.selectbox("Select a column for Visualisation:", df.columns)
-  if st.sidebar.button("Scatter Plot ", type="primary"):
+  if st.sidebar.button("Scatter Plot "):
     fig, ax = plt.subplots()
 
 
@@ -65,14 +65,14 @@ def app():
 
   #Linear Regression
   st.sidebar.title("Visualisation after prediction")
-  if st.sidebar.button("Scaled DataFrame", type="primary"):
-    st.subheader("DataSet", divider = 'rainbow')
+  if st.sidebar.button("Scaled DataFrame"):
+    st.subheader("DataSet")
     st.dataframe(X)
     st.write("Number of Rows: ", df.shape[0])
     st.write("Number of Columns: ", df.shape[1])
 
 
-  if st.sidebar.button("Multiple Linear Regression", type="primary"):
+  if st.sidebar.button("Multiple Linear Regression"):
      
       st.title("Multiple linear Regression")
 
