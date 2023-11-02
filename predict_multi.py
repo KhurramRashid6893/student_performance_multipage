@@ -36,7 +36,7 @@ def app():
 	p_len = st.sidebar.slider("Previous Scores", float(df["Previous Scores"].min()), float(df["Previous Scores"].max()))
 	s_len = st.sidebar.slider("Sleep Hours", float(df["Sleep Hours"].min()), float(df["Sleep Hours"].max()))
 	q_len = st.sidebar.slider("Sample Question Papers Practiced", float(df["Sample Question Papers Practiced"].min()), float(df["Sample Question Papers Practiced"].max()))
-	if st.sidebar.button("Predict", type="primary"):
+	if st.sidebar.button("Predict"):
 		new_data = np.array([[h_len,p_len, s_len, q_len]])
 		prediction = model.predict(new_data)
 		st.write("Input Value of Hours Studied is ", h_len)
