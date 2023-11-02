@@ -34,7 +34,7 @@ def app():
 	st.sidebar.header("Student performance prediction Web App")
 	p_len = st.sidebar.slider("Previous Scores", float(df["Previous Scores"].min()), float(df["Previous Scores"].max()))
 
-	if st.sidebar.button("Predict", type="primary"):
+	if st.sidebar.button("Predict"):
 		arr = np.array([p_len])
 		new_data = arr.reshape(-1, 1)
 		prediction = model.predict(new_data)
